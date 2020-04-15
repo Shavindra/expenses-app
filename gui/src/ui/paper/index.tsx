@@ -1,27 +1,27 @@
-import React from "react";
-import clsx from "clsx";
-import { Paper, withStyles, createStyles } from "@material-ui/core";
+import React, { ReactElement } from 'react';
+import clsx from 'clsx';
+import { Paper, withStyles, createStyles } from '@material-ui/core';
 
-const useStyles = (theme: any) => {
+const useStyles = (theme: any): any => {
   return createStyles({
     root: {
-      display: "flex",
+      display: 'flex',
       padding: theme.spacing(2),
-      overflow: "auto",
-      flexDirection: "column",
+      overflow: 'auto',
+      flexDirection: 'column',
     },
   });
 };
 
-interface IPaperProps {
+interface PaperProps {
   classes: any;
 }
 
-class PaperComponent extends React.Component<IPaperProps> {
-  public render() {
+class PaperCmp extends React.Component<PaperProps> {
+  public render(): ReactElement {
     const { classes } = this.props;
     return <Paper className={clsx(classes.root)}>{this.props.children}</Paper>;
   }
 }
 
-export const UIPaper = withStyles(useStyles)(PaperComponent);
+export const UIPaper = withStyles(useStyles)(PaperCmp);

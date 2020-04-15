@@ -1,5 +1,5 @@
-import React from "react";
-import clsx from "clsx";
+import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import {
   withStyles,
   createStyles,
@@ -11,63 +11,65 @@ import {
   ListItemIcon,
   ListItemText,
   Theme,
-} from "@material-ui/core";
-import { IconDashboard, IconChevronLeft } from "../../ui/icons";
+} from '@material-ui/core';
+import { IconDashboard, IconChevronLeft } from '../../ui/icons';
 
-const useStyles = (theme: Theme) => {
+const useStyles = (theme: Theme): any => {
   const drawerWidth = 240;
 
   return createStyles({
     drawerPaper: {
-      position: "relative",
-      whiteSpace: "nowrap",
+      position: 'relative',
+      whiteSpace: 'nowrap',
       width: drawerWidth,
-      transition: theme.transitions.create("width", {
+      transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
     },
     drawerPaperClose: {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
+      overflowX: 'hidden',
+      transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
       width: 0,
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up('md')]: {
         width: theme.spacing(9),
       },
     },
     toolbarIcon: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-end",
-      padding: "0 8px",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: '0 8px',
       ...theme.mixins.toolbar,
     },
   });
 };
 
-interface IDrawerState {
+interface DrawerState {
   openMenu: boolean;
 }
 
-interface IDrawerProps {
+interface DrawerProps {
   onMenuButtonClick: VoidFunction;
   openMenu: boolean;
   classes: any;
 }
 
-class DrawerCmp extends React.Component<IDrawerProps, IDrawerState> {
-
-  public render() {
+class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
+  public render(): ReactElement {
     const { classes, openMenu } = this.props;
 
     return (
       <Drawer
         variant="permanent"
         classes={{
-          paper: clsx(classes.drawerPaper, !openMenu && classes.drawerPaperClose),
+          paper: clsx(
+            classes.drawerPaper,
+            !openMenu && classes.drawerPaperClose
+          ),
         }}
         open={openMenu}
       >
@@ -89,7 +91,9 @@ class DrawerCmp extends React.Component<IDrawerProps, IDrawerState> {
     );
   }
 
-  private handleMenuButtonClick = (event: React.MouseEvent<HTMLElement>): void => {
+  private handleMenuButtonClick = (
+    event: React.MouseEvent<HTMLElement>
+  ): void => {
     event.preventDefault();
     this.props.onMenuButtonClick();
   };

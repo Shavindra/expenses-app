@@ -1,5 +1,5 @@
-import React from "react";
-import clsx from "clsx";
+import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import {
   AppBar,
   Toolbar,
@@ -7,28 +7,28 @@ import {
   Typography,
   withStyles,
   Theme,
-} from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
+} from '@material-ui/core';
+import { Menu } from '@material-ui/icons';
 
 const drawerWidth = 240;
 
-const useStyles = (theme: Theme) => ({
+const useStyles = (theme: Theme): any => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: "0 8px",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
     ...theme.mixins.toolbar,
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
+    transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
@@ -36,7 +36,7 @@ const useStyles = (theme: Theme) => ({
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
+    transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
@@ -45,7 +45,7 @@ const useStyles = (theme: Theme) => ({
     marginRight: 36,
   },
   menuButtonHidden: {
-    display: "none",
+    display: 'none',
   },
   title: {
     flexGrow: 1,
@@ -53,19 +53,18 @@ const useStyles = (theme: Theme) => ({
   appBarSpacer: theme.mixins.toolbar,
 });
 
-interface IAppBarState {
+interface AppBarState {
   classes: any;
 }
 
-interface IAppBarProps {
+interface AppBarProps {
   onMenuButtonClick: VoidFunction;
-  openMenu: Boolean;
+  openMenu: boolean;
   classes: any;
 }
 
-class AppBarCmp extends React.Component<IAppBarProps, IAppBarState> {
-
-  public render() {
+class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
+  public render(): ReactElement {
     const { openMenu, classes } = this.props;
 
     return (
@@ -100,10 +99,11 @@ class AppBarCmp extends React.Component<IAppBarProps, IAppBarState> {
     );
   }
 
-  private handleMenuButtonClick = (event: React.MouseEvent<HTMLElement>): void => {
+  private handleMenuButtonClick = (
+    event: React.MouseEvent<HTMLElement>
+  ): void => {
     event.preventDefault();
     this.props.onMenuButtonClick();
-  }
+  };
 }
-
 export const AppBarComponent = withStyles(useStyles)(AppBarCmp);
