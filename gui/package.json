@@ -19,6 +19,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "ts-jest": "^25.3.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -27,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tsc --noEmit && eslint */**/*.{js,ts,tsx}",
-    "lint:fix": "tsc --noEmit && eslint */**/*.{js,ts,tsx} --fix"
+    "lint:fix": "tsc --noEmit && eslint */**/*.{js,ts,tsx} --fix",
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,6 +47,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-storyshots": "^5.3.18",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.18",
     "@types/material-ui": "^0.21.7",
     "@types/react-router-dom": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
@@ -53,6 +61,8 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "node-sass": "npm:sass@^1.26.3",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.4",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-test-renderer": "^16.13.1"
   }
 }

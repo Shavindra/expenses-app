@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import * as React from 'react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { UIPaper, theme } from './ui';
 import { LayoutMain } from './layouts';
 
 import './app.scss';
+import { ReactElement } from 'react';
 
 export function App(): ReactElement {
   return (

@@ -1,9 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { App } from './app';
-
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+// Run story snapshots for entire app
+// CRA doesn't allow "root" property change. So include it here.
+// ref: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/scripts/utils/createJestConfig.js#L73
+import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots();
