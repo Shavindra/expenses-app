@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './app.scss';
+import * as React from "react";
+import { Grid } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { BrowserRouter } from "react-router-dom";
+import { UIPaper, theme } from "./ui";
+import { LayoutMain } from "./layouts";
 
-function App() {
+import "./app.scss";
+
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <div className="page">
+          <BrowserRouter>
+            <LayoutMain>
+              {/* Chart */}
+              <Grid item={true} xs={12} md={8} lg={9}>
+                <UIPaper>CHART</UIPaper>
+              </Grid>
+              {/* Recent Deposits */}
+              <Grid item={true} xs={12} md={4} lg={3}>
+                <UIPaper>DEPOSITS</UIPaper>
+              </Grid>
+              {/* Recent Orders */}
+              <Grid item={true} xs={12}>
+                <UIPaper>ORDERS</UIPaper>
+              </Grid>
+            </LayoutMain>
+          </BrowserRouter>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
-
-export default App;
