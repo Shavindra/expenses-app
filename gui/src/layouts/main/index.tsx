@@ -1,20 +1,20 @@
-import React from "react";
-import { withStyles, createStyles, Grid, Container } from "@material-ui/core";
-import { AppBarComponent, DrawerComponent } from "../../components";
+import React, { ReactElement } from 'react';
+import { withStyles, createStyles, Grid, Container } from '@material-ui/core';
+import { AppBarComponent, DrawerComponent } from '../../components';
 
-const useStyles = (theme: any) => {
+const useStyles = (theme: any): any => {
   return createStyles({
     root: {
-      display: "flex",
+      display: 'flex',
       padding: theme.spacing(2),
-      overflow: "auto",
-      flexDirection: "column",
+      overflow: 'auto',
+      flexDirection: 'column',
     },
     appBarSpacer: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
-      height: "100vh",
-      overflow: "auto",
+      height: '100vh',
+      overflow: 'auto',
     },
     container: {
       paddingTop: theme.spacing(4),
@@ -23,29 +23,33 @@ const useStyles = (theme: any) => {
   });
 };
 
-interface IMainLayoutProps {
+interface MainLayoutProps {
   classes: any;
 }
 
-interface IMainLayoutState {
+interface MainLayoutState {
   openMenu: boolean;
 }
 
-
-class MainLayoutComponent extends React.Component<IMainLayoutProps, IMainLayoutState> {
-
+class LayoutMainCmp extends React.Component<MainLayoutProps, MainLayoutState> {
   public state = {
-    openMenu: true
-  }
+    openMenu: true,
+  };
 
-  public render() {
+  public render(): ReactElement {
     const { classes } = this.props;
     const { openMenu } = this.state;
 
     return (
       <React.Fragment>
-        <AppBarComponent onMenuButtonClick={this.handleMenuButtonClick} openMenu={openMenu} />
-        <DrawerComponent onMenuButtonClick={this.handleMenuButtonClick} openMenu={openMenu}  />
+        <AppBarComponent
+          onMenuButtonClick={this.handleMenuButtonClick}
+          openMenu={openMenu}
+        />
+        <DrawerComponent
+          onMenuButtonClick={this.handleMenuButtonClick}
+          openMenu={openMenu}
+        />
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
@@ -58,11 +62,11 @@ class MainLayoutComponent extends React.Component<IMainLayoutProps, IMainLayoutS
     );
   }
 
-  private handleMenuButtonClick = () => {
+  private handleMenuButtonClick = (): void => {
     this.setState({
-      openMenu: !this.state.openMenu
+      openMenu: !this.state.openMenu,
     });
-  }
+  };
 }
 
-export const LayoutMain = withStyles(useStyles)(MainLayoutComponent);
+export const LayoutMain = withStyles(useStyles)(LayoutMainCmp);

@@ -1,6 +1,3 @@
-import { ChevronLeft, Dashboard } from "@material-ui/icons";
+import { ChevronLeft, Dashboard } from '@material-ui/icons';
 
-export {
-    ChevronLeft as IconChevronLeft,
-    Dashboard as IconDashboard
-}
+export { ChevronLeft as IconChevronLeft, Dashboard as IconDashboard };

@@ -6,18 +6,20 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "jsx": true
   },
   "plugins": [
     "prettier",
+    "react",
     "@typescript-eslint"
   ],
   "settings": {
@@ -31,6 +33,8 @@
       {
         "singleQuote": true
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": 0,
+    "react/jsx-uses-vars": "error"
   }
 }
