@@ -106,4 +106,5 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
     this.props.onMenuButtonClick(event);
   };
 }
+
 export const AppBarComponent = withStyles(useStyles)(AppBarCmp);

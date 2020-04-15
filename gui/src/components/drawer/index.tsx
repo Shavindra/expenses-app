@@ -53,7 +53,7 @@ interface DrawerState {
 }
 
 interface DrawerProps {
-  onMenuButtonClick: VoidFunction;
+  onMenuButtonClick: (event?: React.MouseEvent<HTMLElement>) => void;
   openMenu: boolean;
   classes: any;
 }
@@ -95,7 +95,7 @@ class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
     event: React.MouseEvent<HTMLElement>
   ): void => {
     event.preventDefault();
-    this.props.onMenuButtonClick();
+    this.props.onMenuButtonClick(event);
   };
 }
 

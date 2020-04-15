@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots App Bar Closed State 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorPrimary AppBarCmp-appBar-371 MuiPaper-elevation0"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular AppBarCmp-toolbar-369 MuiToolbar-gutters"
+  >
+    <button
+      aria-label="open drawer"
+      className="MuiButtonBase-root MuiIconButton-root AppBarCmp-menuButton-373 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          />
+        </svg>
+      </span>
+    </button>
+    <h1
+      className="MuiTypography-root AppBarCmp-title-375 MuiTypography-h6 MuiTypography-noWrap"
+    >
+      Dashboard
+    </h1>
+  </div>
+</header>
+`;
+
+exports[`Storyshots App Bar Open State 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorPrimary AppBarCmp-appBar-268 AppBarCmp-appBarShift-269 MuiPaper-elevation0"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular AppBarCmp-toolbar-266 MuiToolbar-gutters"
+  >
+    <button
+      aria-label="open drawer"
+      className="MuiButtonBase-root MuiIconButton-root AppBarCmp-menuButton-270 AppBarCmp-menuButtonHidden-271 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiIconButton-label"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          />
+        </svg>
+      </span>
+    </button>
+    <h1
+      className="MuiTypography-root AppBarCmp-title-272 MuiTypography-h6 MuiTypography-noWrap"
+    >
+      Dashboard
+    </h1>
+  </div>
+</header>
+`;
+
+exports[`Storyshots App Default 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="page"
+  >
+    <header
+      className="MuiPaper-root-25 MuiAppBar-root-14 MuiAppBar-positionAbsolute-16 MuiAppBar-colorPrimary-21 AppBarCmp-appBar-8 AppBarCmp-appBarShift-9 MuiPaper-elevation0-28"
+    >
+      <div
+        className="MuiToolbar-root-53 MuiToolbar-regular-55 AppBarCmp-toolbar-6 MuiToolbar-gutters-54"
+      >
+        <button
+          aria-label="open drawer"
+          className="MuiButtonBase-root-66 MuiIconButton-root-57 AppBarCmp-menuButton-10 AppBarCmp-menuButtonHidden-11 MuiIconButton-colorInherit-60 MuiIconButton-edgeStart-58"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-65"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-69"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+        </button>
+        <h1
+          className="MuiTypography-root-78 AppBarCmp-title-12 MuiTypography-h6-88 MuiTypography-noWrap-97"
+        >
+          Dashboard
+        </h1>
+      </div>
+    </header>
+    <div
+      className="MuiDrawer-root-111 MuiDrawer-docked-112"
+    >
+      <div
+        className="MuiPaper-root-25 MuiDrawer-paper-113 DrawerCmp-drawerPaper-108 MuiDrawer-paperAnchorLeft-114 MuiDrawer-paperAnchorDockedLeft-118 MuiPaper-elevation0-28"
+      >
+        <div
+          className="DrawerCmp-toolbarIcon-110"
+        >
+          <button
+            className="MuiButtonBase-root-66 MuiIconButton-root-57"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label-65"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-69"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <hr
+          className="MuiDivider-root-123"
+        />
+        <ul
+          className="MuiList-root-130 MuiList-padding-131"
+        >
+          <li
+            className="MuiListItem-root-134 MuiListItem-gutters-141"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root-145"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-69"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root-147"
+            >
+              <span
+                className="MuiTypography-root-78 MuiListItemText-primary-151 MuiTypography-body1-80 MuiTypography-displayBlock-107"
+              >
+                Dashboard
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <main
+      className="LayoutMainCmp-content-3"
+    >
+      <div
+        className="LayoutMainCmp-appBarSpacer-2"
+      />
+      <div
+        className="MuiContainer-root-153 LayoutMainCmp-container-4 MuiContainer-maxWidthLg-159"
+      >
+        <div
+          className="MuiGrid-root-161 MuiGrid-container-162 MuiGrid-spacing-xs-3-186"
+        >
+          <div
+            className="MuiGrid-root-161 MuiGrid-item-163 MuiGrid-grid-xs-12-207 MuiGrid-grid-md-8-231 MuiGrid-grid-lg-9-246"
+          >
+            <div
+              className="MuiPaper-root-25 PaperCmp-root-264 MuiPaper-elevation1-29 MuiPaper-rounded-26"
+            >
+              CHART
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root-161 MuiGrid-item-163 MuiGrid-grid-xs-12-207 MuiGrid-grid-md-4-227 MuiGrid-grid-lg-3-240"
+          >
+            <div
+              className="MuiPaper-root-25 PaperCmp-root-264 MuiPaper-elevation1-29 MuiPaper-rounded-26"
+            >
+              DEPOSITS
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root-161 MuiGrid-item-163 MuiGrid-grid-xs-12-207"
+          >
+            <div
+              className="MuiPaper-root-25 PaperCmp-root-264 MuiPaper-elevation1-29 MuiPaper-rounded-26"
+            >
+              ORDERS
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;
