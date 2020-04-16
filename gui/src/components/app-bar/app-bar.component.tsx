@@ -6,64 +6,21 @@ import {
   IconButton,
   Typography,
   withStyles,
-  Theme,
 } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const drawerWidth = 240;
-
-const useStyles = (theme: Theme): any => ({
-  root: {
-    display: 'flex',
-  },
-  toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
-  },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: 'none',
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appBarSpacer: theme.mixins.toolbar,
-});
-
-interface AppBarState {
-  classes: any;
-}
-
-interface AppBarProps {
-  onMenuButtonClick: (event?: React.MouseEvent<HTMLElement>) => void;
-  openMenu: boolean;
-  classes: any;
-}
+import { appActions } from '../../state-managers';
+import { AppBarProps, AppBarState } from './types';
+import { useStyles } from './styles';
+import { RootState } from '../../store/types';
 
 class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
+  public componentDidMount(): void {
+    this.props.actions.appLoadSuccessAction();
+  }
+
   public render(): ReactElement {
     const { openMenu, classes } = this.props;
 
@@ -107,4 +64,24 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
   };
 }
 
-export const AppBarComponent = withStyles(useStyles)(AppBarCmp);
+// Map States to Props
+function mapStateToProps(state: RootState): { state: RootState } {
+  const { app } = state;
+
+  return {
+    state: {
+      app,
+    },
+  };
+}
+
+function mapDispatchToProps(dispatch: any): { actions: any } {
+  return {
+    actions: bindActionCreators(appActions, dispatch),
+  };
+}
+
+export const AppBarComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(useStyles)(AppBarCmp));
