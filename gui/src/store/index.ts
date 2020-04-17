@@ -1,3 +1,4 @@
-import { configureStore } from './configure-store';
-
-export const appStore = configureStore();
+export * from './store';
+export * from './root-action';
+export * from './root-reducer';
+export * from './types.d';

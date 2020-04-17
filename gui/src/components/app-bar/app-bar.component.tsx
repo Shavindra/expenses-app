@@ -11,7 +11,7 @@ import { Menu } from '@material-ui/icons';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { appActions } from '../../state-managers';
+import { appLoadSuccessAction } from '../../state-managers';
 import { AppBarProps, AppBarState } from './types';
 import { useStyles } from './styles';
 import { RootState } from '../../store/types';
@@ -75,7 +75,7 @@ function mapStateToProps(state: RootState): { state: RootState } {
 
 function mapDispatchToProps(dispatch: any) {
   return {
-    actions: bindActionCreators(appActions, dispatch),
+    actions: bindActionCreators({ appLoadSuccessAction }, dispatch),
   };
 }
 
