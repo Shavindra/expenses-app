@@ -25,14 +25,16 @@ interface AppState {
 
 // TODO: May be separate different filters in to own files/reducers?
 const handlers = {
-  [AppActionTypes.APPLICATION_LOADING]: (): AppState => {
+  [AppActionTypes.APPLICATION_LOADING]: (state: AppState) => {
     return {
+      ...state,
       loading: true,
     };
   },
 
-  [AppActionTypes.APPLICATION_LOADING_SUCCESS]: (): AppState => {
+  [AppActionTypes.APPLICATION_LOADING_SUCCESS]: (state: AppState) => {
     return {
+      ...state,
       error: null,
       loading: false,
     };
@@ -44,6 +46,7 @@ const handlers = {
   ): AppState => {
     // TODO: fix the types
     return {
+      ...state,
       error: action.payload,
       loading: false,
     };

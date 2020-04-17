@@ -7,7 +7,7 @@ export function createReducer<AH extends any, S>(
   initialState: S
 ): RootState {
   return (state: S = initialState, action: AH): S => {
-    if (Object.prototype.isPrototypeOf.call(actionHandlers, action.type)) {
+    if (Object.prototype.hasOwnProperty.call(actionHandlers, action.type)) {
       return actionHandlers[action.type](state, action);
     } else {
       return state;

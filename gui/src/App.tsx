@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Grid } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { appStore } from './store';
 
 import './app.scss';
 
-export function App(): ReactElement {
+export function App() {
   return (
     <Provider store={appStore}>
       <ThemeProvider theme={theme}>

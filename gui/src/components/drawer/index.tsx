@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import {
   withStyles,
@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { IconDashboard, IconChevronLeft } from '../../ui/icons';
 
-const useStyles = (theme: Theme): any => {
+const useStyles = (theme: Theme) => {
   const drawerWidth = 240;
 
   return createStyles({
@@ -59,7 +59,7 @@ interface DrawerProps {
 }
 
 class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
-  public render(): ReactElement {
+  public render() {
     const { classes, openMenu } = this.props;
 
     return (
@@ -91,9 +91,7 @@ class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
     );
   }
 
-  private handleMenuButtonClick = (
-    event: React.MouseEvent<HTMLElement>
-  ): void => {
+  private handleMenuButtonClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     this.props.onMenuButtonClick(event);
   };

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { AppBarComponent } from '../app-bar.component';
 import { action } from '@storybook/addon-actions';
 
@@ -11,10 +11,10 @@ const actionsData = {
   onMenuButtonClick: action('onMenuButtonClick'),
 };
 
-export const openState = (): ReactElement => (
+export const openState = () => (
   <AppBarComponent openMenu={true} {...actionsData} />
 );
 
-export const closedState = (): ReactElement => (
+export const closedState = () => (
   <AppBarComponent openMenu={false} {...actionsData} />
 );

@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { withStyles, createStyles, Grid, Container } from '@material-ui/core';
 import { AppBarComponent, DrawerComponent } from '../../components';
 
-const useStyles = (theme: any): any => {
+const useStyles = (theme: any) => {
   return createStyles({
     root: {
       display: 'flex',
@@ -36,7 +36,7 @@ class LayoutMainCmp extends React.Component<MainLayoutProps, MainLayoutState> {
     openMenu: true,
   };
 
-  public render(): ReactElement {
+  public render() {
     const { classes } = this.props;
     const { openMenu } = this.state;
 
@@ -62,7 +62,7 @@ class LayoutMainCmp extends React.Component<MainLayoutProps, MainLayoutState> {
     );
   }
 
-  private handleMenuButtonClick = (): void => {
+  private handleMenuButtonClick = () => {
     this.setState({
       openMenu: !this.state.openMenu,
     });

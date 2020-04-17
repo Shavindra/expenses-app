@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Paper, withStyles, createStyles } from '@material-ui/core';
 
-const useStyles = (theme: any): any => {
+const useStyles = (theme: any) => {
   return createStyles({
     root: {
       display: 'flex',
@@ -18,7 +18,7 @@ interface PaperProps {
 }
 
 class PaperCmp extends React.Component<PaperProps> {
-  public render(): ReactElement {
+  public render() {
     const { classes } = this.props;
     return <Paper className={clsx(classes.root)}>{this.props.children}</Paper>;
   }

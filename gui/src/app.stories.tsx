@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { App } from './app';
 
 export default {
@@ -6,6 +6,6 @@ export default {
   component: App,
 };
 
-export const Default = (): ReactElement => {
+export const Default = () => {
   return <App />;
 };

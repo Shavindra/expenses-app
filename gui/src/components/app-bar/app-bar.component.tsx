@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import {
   AppBar,
@@ -17,11 +17,11 @@ import { useStyles } from './styles';
 import { RootState } from '../../store/types';
 
 class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
-  public componentDidMount(): void {
+  public componentDidMount() {
     this.props.actions.appLoadSuccessAction();
   }
 
-  public render(): ReactElement {
+  public render() {
     const { openMenu, classes } = this.props;
 
     return (
@@ -56,9 +56,7 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
     );
   }
 
-  private handleMenuButtonClick = (
-    event: React.MouseEvent<HTMLElement>
-  ): void => {
+  private handleMenuButtonClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     this.props.onMenuButtonClick(event);
   };
@@ -75,7 +73,7 @@ function mapStateToProps(state: RootState): { state: RootState } {
   };
 }
 
-function mapDispatchToProps(dispatch: any): { actions: any } {
+function mapDispatchToProps(dispatch: any) {
   return {
     actions: bindActionCreators(appActions, dispatch),
   };
