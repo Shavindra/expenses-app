@@ -33,7 +33,7 @@ interface MainLayoutState {
 
 class LayoutMainCmp extends React.Component<MainLayoutProps, MainLayoutState> {
   public state = {
-    openMenu: true,
+    openMenu: false,
   };
 
   public render() {
