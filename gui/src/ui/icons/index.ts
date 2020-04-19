@@ -3,6 +3,8 @@ import {
   Dashboard,
   ExpandMore,
   ExpandLess,
+  Save,
+  Edit,
 } from '@material-ui/icons';
 
 export {
@@ -10,4 +12,6 @@ export {
   Dashboard as IconDashboard,
   ExpandMore as IconExpandMore,
   ExpandLess as IconExpandLess,
+  Save as IconSave,
+  Edit as IconEdit,
 };
