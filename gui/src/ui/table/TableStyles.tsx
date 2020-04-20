@@ -86,7 +86,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     subComponent: {
       textAlign: 'left',
-      padding: theme.spacing(2),
+      padding: `${theme.spacing(4)}px ${theme.spacing(2)}px `,
       background: '#FFFFFF',
     },
     tableCell: {

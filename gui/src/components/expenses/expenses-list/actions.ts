@@ -24,3 +24,21 @@ export const updateExpense = (payload: any) => {
     dispatch(expensesUpdateSuccessAction(expenses));
   };
 };
+
+
+export const uploadReceipt = (payload: any) => {
+  return async function (dispatch: any) {
+  
+    const { id, files } = payload;
+   
+    const formData = new FormData();
+    formData.append('receipt', files[0], files[0].name);
+    
+    dispatch(expensesUpdatingAction({ id }));
+
+    // TODO: add the header config to another method .fileUpload
+    const expenses = await expenseService.post(`/${id}/receipts`, formData, { headers: {'Content-Type': 'multipart/form-data' }});
+
+    dispatch(expensesUpdateSuccessAction(expenses));
+  };
+};

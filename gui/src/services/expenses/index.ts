@@ -7,8 +7,8 @@ class ExpenseService extends APIService {
     return listExpensesModel(response);
   }
 
-  public async post(url: string, params?: any): Promise<any> {
-    const response = await super.post(url, params);
+  public async post(url: string, params?: any, config?: any): Promise<any> {
+    const response = await super.post(url, params, config);
     return updateExpenseModel(response);
   }
 }

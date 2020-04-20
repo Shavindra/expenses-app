@@ -162,7 +162,7 @@ export function TableToolbar<T extends object>({
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState<Element | undefined>(undefined);
   const [columnsOpen, setColumnsOpen] = useState(false);
-  const [filterOpen, setFilterOpen] = useState(false);
+  // const [filterOpen, setFilterOpen] = useState(false);
   const hideableColumns = columns.filter(
     (column) => !(column.id === '_selector') && !column.disableHideToggle
   );
@@ -175,17 +175,17 @@ export function TableToolbar<T extends object>({
     [setAnchorEl, setColumnsOpen]
   );
 
-  const handleFilterClick: any = useCallback(
-    (event: MouseEvent) => {
-      setAnchorEl(event.currentTarget);
-      setFilterOpen(true);
-    },
-    [setAnchorEl, setFilterOpen]
-  );
+  // const handleFilterClick: any = useCallback(
+  //   (event: MouseEvent) => {
+  //     setAnchorEl(event.currentTarget);
+  //     setFilterOpen(true);
+  //   },
+  //   [setAnchorEl, setFilterOpen]
+  // );
 
   const handleClose = useCallback(() => {
     setColumnsOpen(false);
-    setFilterOpen(false);
+    // setFilterOpen(false);
     setAnchorEl(undefined);
   }, []);
 

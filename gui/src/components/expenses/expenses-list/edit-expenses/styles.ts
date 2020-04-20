@@ -5,5 +5,15 @@ export const useStyles = (theme: any) => {
     title: {
       margin: `0 0 ${theme.spacing(2)}px 0`,
     },
+    receiptHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      padding: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px `
+    },
+    uploadButton: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+ 
   });
 };
