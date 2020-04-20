@@ -12,7 +12,8 @@ import {
   ListItemText,
   Theme,
 } from '@material-ui/core';
-import { IconDashboard, IconChevronLeft } from '../../ui/icons';
+import { IconDashboard, IconChevronLeft, IconWallet } from '../../ui/icons';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = (theme: Theme) => {
   const drawerWidth = 240;
@@ -80,11 +81,17 @@ class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
         </div>
         <Divider />
         <List>
-          <ListItem>
+        <ListItem button component={NavLink} to="/" activeClassName="Mui-selected" exact>
             <ListItemIcon>
               <IconDashboard />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
+          </ListItem>
+          <ListItem button component={NavLink} to="/expenses" activeClassName="Mui-selected" exact>
+            <ListItemIcon>
+              <IconWallet />
+            </ListItemIcon>
+            <ListItemText primary="Expenses" />
           </ListItem>
         </List>
       </Drawer>
