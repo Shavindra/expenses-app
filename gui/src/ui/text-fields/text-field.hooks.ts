@@ -9,6 +9,7 @@ export const useDisableInput: any = (
 
   const toggleDisable = useCallback(
     (event: MouseEvent) => {
+      event.preventDefault();
       const isDisabled = !disabled;
 
       setDisabled(isDisabled);
@@ -16,13 +17,13 @@ export const useDisableInput: any = (
         callback(value, isDisabled);
       }
     },
-    [disabled, value]
+    [disabled, value, callback]
   );
 
   return [disabled, toggleDisable];
 };
 
-export const useOnChange: any = (initial = '', callback?: any) => {
+export const useOnChange: any = (initial: any = '', callback?: any) => {
   const [value, setValue] = useState(initial);
 
   const onChange = useCallback(
@@ -32,7 +33,8 @@ export const useOnChange: any = (initial = '', callback?: any) => {
         callback(event.target.value);
       }
     },
-    [value]
+    [callback]
   );
+
   return [value, onChange];
 };

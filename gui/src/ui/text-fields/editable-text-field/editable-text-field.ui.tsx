@@ -1,39 +1,45 @@
 import React, { ChangeEvent } from 'react';
 import { TextField } from '@material-ui/core';
-import { UIButtonWithIcon } from '..';
-import { IconEdit, IconSave } from '../icons';
-import { useDisableInput, useOnChange } from './text-field.hooks';
+import { UIButtonWithIcon } from '../..';
+import { IconEdit, IconSave } from '../../icons';
+import { useDisableInput, useOnChange } from '../text-field.hooks';
+import { useStyles } from './styles';
 
 interface EditableFieldProps {
   disabled?: boolean;
   value?: string;
-  onDisable?: () => any;
+  onDisable?: (value: any, disabled: boolean) => any;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => any;
-  multiline?: boolean
-  id?: string
+  multiline?: boolean;
+  id?: string;
+  fullWidth?: boolean;
+  placeholder?: string;
+  label?: string;
 }
-
 
 export const UITextFieldEditable: React.FC<EditableFieldProps> = (
   props: EditableFieldProps
 ) => {
-  const [value, handleOnChange] = useOnChange('');
-  const [disabled, setDisabled] = useDisableInput(true, value, props.onDisable);
+  const { onDisable, ...otherProps } = props;
+
+  const classes = useStyles();
+  const [value, handleOnChange] = useOnChange(props.value);
+  const [disabled, setDisabled] = useDisableInput(true, value, onDisable);
 
   return (
     <React.Fragment>
-      <div>
+      <div className={classes.root}>
         <TextField
-          value={props.value}
           disabled={disabled}
-          id='ediable-field'
-          {...props}
+          id="ediable-field"
+          {...otherProps}
+          value={value}
           type={'text'}
           onChange={handleOnChange}
         />
         <UIButtonWithIcon
           onClick={setDisabled}
-          label={disabled ? 'edit': 'save'}
+          label={disabled ? 'edit' : 'save'}
           icon={
             disabled ? (
               <IconEdit fontSize={'small'} />

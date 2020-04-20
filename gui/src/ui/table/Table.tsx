@@ -1,4 +1,4 @@
-import { TableSortLabel, TextField } from '@material-ui/core';
+import { TableSortLabel } from '@material-ui/core';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 import cx from 'clsx';
@@ -11,7 +11,6 @@ import React, {
 } from 'react';
 import {
   Cell,
-  FilterProps,
   HeaderProps,
   Hooks,
   Meta,
@@ -30,8 +29,11 @@ import {
   useTable,
 } from 'react-table';
 
-import { fuzzyTextFilter, numericTextFilter } from './filters';
-import { ResizeHandle } from './ResizeHandle';
+import {
+  fuzzyTextFilter,
+  numericTextFilter,
+  ColumnHeaderFilter,
+} from './filters';
 import { TablePagination } from './TablePagination';
 import { useStyles } from './TableStyles';
 import { TableToolbar } from './TableToolbar';
@@ -49,34 +51,6 @@ export interface Table<T extends object = {}> extends TableOptions<T> {
 const DefaultHeader: React.FC<HeaderProps<any>> = ({ column }: any) => (
   <>{column.id.startsWith('_') ? null : camelToWords(column.id)}</>
 );
-
-function DefaultColumnFilter<T extends object>({
-  column: { id, index, filterValue, setFilter, render, parent },
-}: FilterProps<T>) {
-  const [value, setValue] = React.useState(filterValue || '');
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-  // ensure that reset loads the new value
-  useEffect(() => {
-    setValue(filterValue || '');
-  }, [filterValue]);
-
-  const firstIndex = !(parent && parent.index);
-  return (
-    <TextField
-      name={id}
-      label={render('Header')}
-      value={value}
-      autoFocus={index === 0 && firstIndex}
-      variant={'standard'}
-      onChange={handleChange}
-      onBlur={(e) => {
-        setFilter(e.target.value || undefined);
-      }}
-    />
-  );
-}
 
 const getStyles = (props: any, align = 'left', alignItems = 'flex-start') => [
   props,
@@ -139,7 +113,7 @@ const cellProps = (props: any, { cell }: any) =>
   );
 
 const defaultColumn = {
-  Filter: DefaultColumnFilter,
+  Filter: ColumnHeaderFilter,
   Cell: TooltipCell,
   Header: DefaultHeader,
   // When using the useFlexLayout:
@@ -166,7 +140,7 @@ const filterTypes = {
   numeric: numericTextFilter,
 };
 
-export function TableComponent<T extends object>(
+export function UITableComponent<T extends object>(
   props: PropsWithChildren<any>
 ): ReactElement {
   const {
@@ -277,7 +251,7 @@ export function TableComponent<T extends object>(
                         {column.render('Header')}
                       </div>
                     )}
-                    {column.canResize && <ResizeHandle column={column} />}
+                    {column.canFilter && column.render('Filter')}
                   </div>
                 );
               })}
@@ -293,13 +267,13 @@ export function TableComponent<T extends object>(
                 {...row.getRowProps()}
                 style={{ display: 'block' }}
                 className={cx(classes.tableRow, {
-                  rowSelected: row.isSelected,
+                  'row-selected': row.isExpanded,
                 })}
               >
                 <div
                   style={{ display: 'flex' }}
                   className={cx(classes.tableRow, {
-                    rowSelected: row.isSelected,
+                    'row-selected': row.isExpanded,
                   })}
                 >
                   {row.cells.map((cell: any, i) => {
@@ -334,9 +308,8 @@ export function TableComponent<T extends object>(
                     );
                   })}
                 </div>
-                {console.log(row)}
                 {row.isExpanded ? (
-                  <div style={{ width: '100%' }}>
+                  <div className={classes.subComponent}>
                     <SubComponent data={row.original} />
                   </div>
                 ) : null}

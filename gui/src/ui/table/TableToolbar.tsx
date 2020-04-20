@@ -9,7 +9,7 @@ import {
 import AddIcon from '@material-ui/icons/Add';
 import CreateIcon from '@material-ui/icons/CreateOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
-import FilterListIcon from '@material-ui/icons/FilterList';
+// import FilterListIcon from '@material-ui/icons/FilterList';
 import ViewColumnsIcon from '@material-ui/icons/ViewColumn';
 import classnames from 'clsx';
 import React, {
@@ -23,7 +23,7 @@ import { TableInstance } from 'react-table';
 
 import { TableMouseEventHandler } from '../../types/react-table-config';
 import { ColumnHidePage } from './ColumnHidePage';
-import { FilterPage } from './FilterPage';
+// import { FilterPage } from './FilterPage';
 import { UIButtonWithIcon } from '..';
 
 export const useStyles = makeStyles(() =>
@@ -240,12 +240,12 @@ export function TableToolbar<T extends object>({
           show={columnsOpen}
           anchorEl={anchorEl}
         />
-        <FilterPage<T>
+        {/* <FilterPage<T>
           instance={instance}
           onClose={handleClose}
           show={filterOpen}
           anchorEl={anchorEl}
-        />
+        /> */}
         {hideableColumns.length > 1 && (
           <UIButtonWithIcon
             icon={<ViewColumnsIcon />}
@@ -254,11 +254,11 @@ export function TableToolbar<T extends object>({
             variant="right"
           />
         )}
-        <UIButtonWithIcon
+        {/* <UIButtonWithIcon
           icon={<FilterListIcon />}
           onClick={handleFilterClick}
           label="Filter by columns"
-        />
+        /> */}
       </div>
     </Toolbar>
   );

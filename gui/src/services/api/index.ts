@@ -10,11 +10,11 @@ export class APIService {
     return this.httpClient.get(this.getUrl(), { params });
   }
 
-  public post(params: any) {
-    return this.httpClient.post(this.getUrl(), { params });
+  public post(url = '', params: any) {
+    return this.httpClient.post(this.getUrl(url), { ...params });
   }
 
-  private getUrl(): string {
-    return this.apiUrl + this.endpoint;
+  private getUrl(suffix = ''): string {
+    return this.apiUrl + this.endpoint + suffix;
   }
 }

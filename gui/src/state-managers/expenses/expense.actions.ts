@@ -1,17 +1,39 @@
 import { type } from '../utils';
 import { createAction } from '@reduxjs/toolkit';
 
-const listTypePrefix = 'EXPENSES_LIST';
+const typePrefix = 'EXPENSES';
 
-// List Action creators
+// LIST Action creators
 export const expensesListLoadingAction = createAction(
-  type(listTypePrefix + '/Loading')
+  type(typePrefix + '/List Loading')
 );
 export const expensesListLoadSuccessAction = createAction<any>(
-  type(listTypePrefix + '/Loading Success')
+  type(typePrefix + '/List Success')
 );
 export const expensesListLoadFailureAction = createAction<string>(
-  type(listTypePrefix + '/Loading Failure')
+  type(typePrefix + '/List Failure')
+);
+
+// GET Action creators
+export const expensesGetLoadingAction = createAction<any>(
+  type(typePrefix + '/Get Loading')
+);
+export const expensesGetSuccessAction = createAction<any>(
+  type(typePrefix + '/Get Success')
+);
+export const expensesGetFailureAction = createAction<string>(
+  type(typePrefix + '/Get Failure')
+);
+
+// UPDATE Action creators
+export const expensesUpdatingAction = createAction<any>(
+  type(typePrefix + '/Updating')
+);
+export const expensesUpdateSuccessAction = createAction<any>(
+  type(typePrefix + '/Update Success')
+);
+export const expensesUpdateFailureAction = createAction<string>(
+  type(typePrefix + '/Update Failure')
 );
 
 // const itemTypePrefix = 'EXPENSES_ITEM';

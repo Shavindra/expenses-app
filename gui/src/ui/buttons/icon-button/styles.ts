@@ -1,6 +1,6 @@
-import { Theme, createStyles } from '@material-ui/core';
+import { createStyles } from '@material-ui/core';
 
-export const useStyles = (theme: Theme) => {
+export const useStyles = () => {
   createStyles({
     toolbar: {
       display: 'flex',

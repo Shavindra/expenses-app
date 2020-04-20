@@ -36,6 +36,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       lineHeight: '1.5rem',
       borderRight: '1px solid rgba(224, 224, 224, 1)',
       flexGrow: '1 !important' as any,
+      flexWrap: 'wrap',
       '&:last-child': {
         borderRight: 'none',
         flexGrow: '0 !important',
@@ -76,12 +77,17 @@ export const useStyles = makeStyles((theme: Theme) =>
       '&:last-child': {
         borderBottom: 'none',
       },
-      '&.rowSelected': {
+      '&.row-selected': {
         backgroundColor: 'rgba(0, 0, 0, 0.04)',
         '&:hover': {
           backgroundColor: 'rgba(0, 0, 0, 0.07)',
         },
       },
+    },
+    subComponent: {
+      textAlign: 'left',
+      padding: theme.spacing(2),
+      background: '#FFFFFF',
     },
     tableCell: {
       padding: '16px 8px',

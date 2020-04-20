@@ -3,14 +3,17 @@ import { withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { AppBarProps, AppBarState } from './types';
+import { AppBarProps, AppBarState } from '../types';
+import { RootState } from '../../../../store/types';
+import { listExpenses } from '../actions';
+import {
+  UITableComponent,
+  IconExpandMore,
+  IconExpandLess,
+  UIButtonWithIcon,
+} from '../../../../ui';
+import { EditDetailsComponent } from '../edit-expenses/edit-expenses.component';
 import { useStyles } from './styles';
-import { RootState } from '../../../store/types';
-import { listExpenses } from './actions';
-import { TableComponent } from '../../../ui/table';
-import { IconExpandMore, IconExpandLess } from '../../../ui/icons';
-import { UIButtonWithIcon } from '../../../ui';
-import { ExpenseItem } from './sub-component.component';
 
 class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
   public componentDidMount() {
@@ -22,13 +25,13 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
       <React.Fragment>
         <div>Expenses list</div>
 
-        <TableComponent
-          name={'testTable'}
+        <UITableComponent
+          name={'expenses-list'}
           columns={this.dataColumns()}
           data={this.props.state.expenses.data}
           multiEdit={false}
           groupBy={false}
-          SubComponent={ExpenseItem}
+          SubComponent={EditDetailsComponent}
         />
       </React.Fragment>
     );
@@ -63,18 +66,27 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
         expander: true,
         Header: () => <strong></strong>,
         maxWidth: 10,
-        Cell: ({ row }: any) => (
-          // Use Cell to render an expander for each row.
-          // We can use the getToggleRowExpandedProps prop-getter
-          // to build the expander.
-          <span {...row.getToggleRowExpandedProps()}>
-            {row.isExpanded ? (
-              <UIButtonWithIcon label={'more info'} icon={<IconExpandMore />} />
-            ) : (
-              <UIButtonWithIcon label={'more info'} icon={<IconExpandLess />} />
-            )}
-          </span>
-        ),
+        Cell: (props: any) => {
+          const { row } = props;
+          return (
+            // Use Cell to render an expander for each row.
+            // We can use the getToggleRowExpandedProps prop-getter
+            // to build the expander.
+            <span {...row.getToggleRowExpandedProps()}>
+              {row.isExpanded ? (
+                <UIButtonWithIcon
+                  label={'more info'}
+                  icon={<IconExpandMore />}
+                />
+              ) : (
+                <UIButtonWithIcon
+                  label={'more info'}
+                  icon={<IconExpandLess />}
+                />
+              )}
+            </span>
+          );
+        },
         alignItems: 'center',
         disableResizing: true,
         disableGroupBy: true,
@@ -94,7 +106,6 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
 // Map States to Props
 function mapStateToProps(state: RootState): { state: RootState } {
   const { expenses } = state;
-
   return {
     state: {
       expenses,

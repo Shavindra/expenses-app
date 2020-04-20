@@ -8,15 +8,16 @@ type ButtonIconProps = {
   onClick?: (event?: React.MouseEvent<Element>) => void;
   disabled?: boolean;
   variant?: string;
+  className?: any;
 };
 
 class ButtonWithIcon extends React.Component<ButtonIconProps> {
   public render() {
-    const { icon, label, disabled } = this.props;
+    const { icon, label, disabled, className } = this.props;
 
     return (
       <Tooltip title={label} aria-label={label}>
-        <span>
+        <span className={className}>
           <IconButton onClick={this.handleClick} disabled={disabled}>
             {icon}
           </IconButton>

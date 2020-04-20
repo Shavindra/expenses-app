@@ -18,7 +18,7 @@ import { RootState } from '../../store/types';
 
 class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
   public componentDidMount() {
-    this.props.actions.appLoadSuccessAction();
+    // this.props.actions.appLoadSuccessAction();
   }
 
   public render() {
