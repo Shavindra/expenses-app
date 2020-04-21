@@ -2,22 +2,12 @@
  * External Imports
  */
 import React from 'react';
-import { makeStyles, Grid, Paper } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiGrid-container': {
-      flexGrow: 1,
-      display: 'flex',
-    },
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
-
+/**
+ * Internal Imports
+ */
+import { useStyles } from './styles';
 export function UIGridList(props: any) {
   const classes = useStyles();
 

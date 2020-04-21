@@ -1,27 +1,14 @@
+/**
+ * External Imports
+ */
 import React from 'react';
-import { withStyles, createStyles, Grid, Container } from '@material-ui/core';
+import { withStyles, Grid, Container } from '@material-ui/core';
 import { AppBarComponent, DrawerComponent } from '../../components';
 
-const useStyles = (theme: any) => {
-  return createStyles({
-    root: {
-      display: 'flex',
-      padding: theme.spacing(2),
-      overflow: 'auto',
-      flexDirection: 'column',
-    },
-    appBarSpacer: theme.mixins.toolbar,
-    content: {
-      flexGrow: 1,
-      height: '100vh',
-      overflow: 'auto',
-    },
-    container: {
-      paddingTop: theme.spacing(4),
-      paddingBottom: theme.spacing(4),
-    },
-  });
-};
+/**
+ * Internal Imports
+ */
+import { useStyles } from './styles';
 
 interface MainLayoutProps {
   classes: any;
