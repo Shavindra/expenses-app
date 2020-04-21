@@ -1,4 +1,11 @@
+/**
+ * External Imports
+ */
 import { AxiosResponse } from 'axios';
+
+/**
+ * Internal Imports
+ */
 import { formatNumber } from '../../../utils';
 
 export const listExpensesModel = (response: AxiosResponse) => {

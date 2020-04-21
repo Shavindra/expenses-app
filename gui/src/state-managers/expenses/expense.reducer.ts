@@ -1,3 +1,6 @@
+/**
+ * Internal Imports
+ */
 import { createReducer } from '../utils';
 import * as actions from './expense.actions';
 import { ArrayToObject } from '../../utils/array-to-object.util';

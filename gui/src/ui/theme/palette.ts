@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { colors } from '@material-ui/core';
 
 const white = '#FFFFFF';

@@ -1,3 +1,6 @@
+/**
+ * Internal Imports
+ */
 import { compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 

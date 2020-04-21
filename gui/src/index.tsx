@@ -1,5 +1,12 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+/**
+ * Internal Imports
+ */
 import './index.css';
 import { App } from './app';
 import * as serviceWorker from './serviceWorker';

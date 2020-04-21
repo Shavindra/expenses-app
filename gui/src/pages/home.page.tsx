@@ -1,6 +1,13 @@
+/**
+ * External Imports
+ */
 import React from 'react';
-import { LayoutMain } from '../layouts';
 import { Grid } from '@material-ui/core';
+
+/**
+ * Internal Imports
+ */
+import { LayoutMain } from '../layouts';
 
 export class HomePage extends React.Component {
   public render() {

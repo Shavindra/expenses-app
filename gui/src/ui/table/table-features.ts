@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import {
   Hooks,
   Meta,
@@ -11,6 +14,10 @@ import {
   useResizeColumns,
   useRowSelect,
 } from 'react-table';
+
+/**
+ * Internal Imports
+ */
 import {
   ColumnHeaderFilter,
   fuzzyTextFilter,

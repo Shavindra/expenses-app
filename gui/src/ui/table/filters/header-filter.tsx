@@ -1,6 +1,13 @@
+/**
+ * External Imports
+ */
 import React, { useEffect } from 'react';
 import { FilterProps } from 'react-table';
 import { TextField, InputAdornment } from '@material-ui/core';
+
+/**
+ * Internal Imports
+ */
 import { IconSearch } from '../../icons';
 
 export function ColumnHeaderFilter<T extends object>({

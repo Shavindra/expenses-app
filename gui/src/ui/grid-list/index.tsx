@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import { makeStyles, Grid, Paper } from '@material-ui/core';
 

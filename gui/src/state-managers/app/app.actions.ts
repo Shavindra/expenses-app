@@ -1,5 +1,12 @@
-import { type } from '../utils';
+/**
+ * External Imports
+ */
 import { createAction } from '@reduxjs/toolkit';
+
+/**
+ * Internal Imports
+ */
+import { type } from '../utils';
 
 // Action creators
 export const appLoadingAction = createAction(type('APP/Loading'));

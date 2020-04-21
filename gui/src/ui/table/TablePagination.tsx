@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { TablePagination as _MuiTablePagination } from '@material-ui/core';
 import React, { PropsWithChildren, ReactElement, useCallback } from 'react';
 import { TableInstance } from 'react-table';

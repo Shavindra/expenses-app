@@ -1,11 +1,17 @@
-// This is a custom UI for our 'between' or number range
-// filter. It uses two number boxes and filters rows to
-
+/**
+ * External Imports
+ */
 import React from 'react';
 import { FilterProps, IdType, Row } from 'react-table';
-import { UITextField } from '../../text-fields';
 import { MenuItem } from '@material-ui/core';
 
+/**
+ * Internal Imports
+ */
+import { UITextField } from '../../text-fields';
+
+// This is a custom UI for our 'between' or number range
+// filter. It uses two number boxes and filters rows to
 const getMinMax = (rows: Row<any>[], id: IdType<any>) => {
   let min = rows.length ? rows[0].values[id] : 0;
   let max = rows.length ? rows[0].values[id] : 0;

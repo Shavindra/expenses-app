@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import clsx from 'clsx';
 import {
@@ -12,8 +15,12 @@ import {
   ListItemText,
   Theme,
 } from '@material-ui/core';
-import { IconDashboard, IconChevronLeft, IconWallet } from '../../ui/icons';
 import { NavLink } from 'react-router-dom';
+
+/**
+ * Internal Imports
+ */
+import { IconDashboard, IconChevronLeft, IconWallet } from '../../ui/icons';
 
 const useStyles = (theme: Theme) => {
   const drawerWidth = 240;

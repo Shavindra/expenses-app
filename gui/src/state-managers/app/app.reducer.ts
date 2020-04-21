@@ -1,3 +1,6 @@
+/**
+ * Internal Imports
+ */
 import { createReducer } from '../utils';
 import * as actions from './app.actions';
 

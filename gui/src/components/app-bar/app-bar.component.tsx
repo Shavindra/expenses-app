@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import clsx from 'clsx';
 import {
@@ -11,16 +14,15 @@ import { Menu } from '@material-ui/icons';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+/**
+ * Internal Imports
+ */
 import { appLoadSuccessAction } from '../../state-managers';
 import { AppBarProps, AppBarState } from './types';
 import { useStyles } from './styles';
 import { RootState } from '../../store/types';
 
 class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
-  public componentDidMount() {
-    // this.props.actions.appLoadSuccessAction();
-  }
-
   public render() {
     const { openMenu, classes } = this.props;
 

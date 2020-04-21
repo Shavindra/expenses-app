@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import matchSorter from 'match-sorter';
 import { FilterValue, IdType, Row } from 'react-table';
 

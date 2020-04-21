@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React, {
   CSSProperties,
   PropsWithChildren,
@@ -10,6 +13,9 @@ import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 import cx from 'clsx';
 import { Cell, useTable } from 'react-table';
 
+/**
+ * Internal Imports
+ */
 import { TablePagination } from './TablePagination';
 import { useStyles } from './TableStyles';
 import { TableToolbar } from './TableToolbar';

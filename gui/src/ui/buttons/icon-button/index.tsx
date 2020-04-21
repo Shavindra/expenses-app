@@ -1,4 +1,11 @@
+/**
+ * External Imports
+ */
 import { Tooltip, IconButton, withStyles } from '@material-ui/core';
+
+/**
+ * Internal Imports
+ */
 import { useStyles } from './styles';
 import React, { ReactElement } from 'react';
 

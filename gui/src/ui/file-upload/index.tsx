@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React, { useCallback, ChangeEvent } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -31,7 +34,6 @@ export const UIFileUpload: React.FC<FileUpload> = (props: FileUpload) => {
 
   const handOnChange = useCallback(
     (event: any) => {
-      console.log(event);
       if (typeof onChange === 'function') {
         onChange(event.target.files);
       }

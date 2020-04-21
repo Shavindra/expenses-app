@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import {
   Button,
   IconButton,
@@ -9,7 +12,6 @@ import {
 import AddIcon from '@material-ui/icons/Add';
 import CreateIcon from '@material-ui/icons/CreateOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
-// import FilterListIcon from '@material-ui/icons/FilterList';
 import ViewColumnsIcon from '@material-ui/icons/ViewColumn';
 import classnames from 'clsx';
 import React, {
@@ -21,9 +23,11 @@ import React, {
 } from 'react';
 import { TableInstance } from 'react-table';
 
+/**
+ * Internal Imports
+ */
 import { TableMouseEventHandler } from '../../types/react-table-config';
 import { ColumnHidePage } from './ColumnHidePage';
-// import { FilterPage } from './FilterPage';
 import { UIButtonWithIcon } from '..';
 
 export const useStyles = makeStyles(() =>

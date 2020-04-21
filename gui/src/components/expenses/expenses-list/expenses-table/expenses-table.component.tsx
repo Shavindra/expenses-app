@@ -1,8 +1,14 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import { withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+/**
+ * Internal Imports
+ */
 import { AppBarProps, AppBarState } from '../types';
 import { RootState } from '../../../../store/types';
 import { listExpenses } from '../actions';

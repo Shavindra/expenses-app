@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import {
   Checkbox,
   FormControlLabel,

@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { Chip, createStyles, makeStyles } from '@material-ui/core';
 import React, { useCallback } from 'react';
 import { FilterValue, IdType, TableInstance } from 'react-table';

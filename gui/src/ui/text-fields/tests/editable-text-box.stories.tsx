@@ -1,5 +1,13 @@
 import React from 'react';
+
+/**
+ * External Imports
+ */
 import { UITextFieldEditable } from '..';
+
+/**
+ * Internal Imports
+ */
 import { action } from '@storybook/addon-actions';
 
 export default {

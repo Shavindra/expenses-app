@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import clsx from 'clsx';
 import { Paper, withStyles, createStyles } from '@material-ui/core';

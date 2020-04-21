@@ -1,7 +1,14 @@
+/**
+ * External Imports
+ */
 import React, { ChangeEvent } from 'react';
 import { TextField } from '@material-ui/core';
-import { UIButtonWithIcon } from '../..';
+
+/**
+ * External Imports
+ */
 import { IconEdit, IconSave } from '../../icons';
+import { UIButtonWithIcon } from '../../buttons';
 import { useDisableInput, useOnChange } from '../text-field.hooks';
 import { useStyles } from './styles';
 

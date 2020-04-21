@@ -1,4 +1,11 @@
+/**
+ * External Imports
+ */
 import { combineReducers } from 'redux';
+
+/**
+ * Internal Imports
+ */
 import { applicationReducer, expensesListReducer } from '../state-managers';
 
 const reducers = {

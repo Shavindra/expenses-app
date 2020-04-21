@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import palette from './palette';
 
 export default {

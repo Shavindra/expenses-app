@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { MouseEventHandler } from 'react';
 import {
   TableInstance,

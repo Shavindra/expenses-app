@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { FilterValue, IdType, Row } from 'react-table';
 
 const regex = /([=<>!]*)\s*((?:[0-9].?[0-9]*)+)/;

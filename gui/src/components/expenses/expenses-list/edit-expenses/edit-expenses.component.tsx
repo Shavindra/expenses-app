@@ -1,17 +1,23 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import { Grid, Typography, withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
 
+/**
+ * Internal Imports
+ */
 import {
   UITextFieldEditable,
   UIFileUpload,
   AddIcon,
   UIGridList,
 } from '../../../../ui';
-import { useStyles } from './styles';
 import { updateExpense, uploadReceipt } from '../actions';
 import { RootState } from '../../../../store';
+import { useStyles } from './styles';
 
 export class EditDetails extends React.Component<any, any> {
   public render() {

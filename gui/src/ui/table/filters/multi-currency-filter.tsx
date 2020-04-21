@@ -1,3 +1,6 @@
+/**
+ * External Imports
+ */
 import { FilterValue, IdType } from 'react-table';
 
 export function multiCurrencyRangeFilter<T extends object>(

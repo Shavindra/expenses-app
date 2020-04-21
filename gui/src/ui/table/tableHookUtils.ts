@@ -1,6 +1,5 @@
 // Various functions pulled from the internal react-table utils package - useful
 // when pulling hooks from the main repo before changing them.
-
 export function sum(arr: any[]) {
   return arr.reduce((prev, curr) => prev + curr, 0);
 }

@@ -1,7 +1,13 @@
+/**
+ * External Imports
+ */
 import { applyMiddleware, createStore } from 'redux';
 import { logger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
+/**
+ * Internal Imports
+ */
 import { RootState } from './types';
 import { rootReducer } from './root-reducer';
 import { composeEnhancers } from './utils/compose-enhancers';

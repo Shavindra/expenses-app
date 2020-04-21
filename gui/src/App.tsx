@@ -1,12 +1,17 @@
+/**
+ * External Imports
+ */
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+/**
+ * Internal Imports
+ */
 import { appStore } from './store';
 import { ExpensesPage, HomePage } from './pages';
 import { theme } from './ui';
-
 import './app.scss';
 
 export function App() {

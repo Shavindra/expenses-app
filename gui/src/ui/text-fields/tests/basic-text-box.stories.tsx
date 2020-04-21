@@ -1,4 +1,11 @@
+/**
+ * External Imports
+ */
 import React from 'react';
+
+/**
+ * Internal Imports
+ */
 import { UITextField } from '..';
 
 export default {
