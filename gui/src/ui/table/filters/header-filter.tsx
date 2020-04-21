@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { FilterProps } from 'react-table';
-import { TextField } from '@material-ui/core';
+import { TextField, InputAdornment } from '@material-ui/core';
+import { IconSearch } from '../../icons';
 
 export function ColumnHeaderFilter<T extends object>({
-  column: { id, index, filterValue, setFilter, parent },
+  column: { id, index, filterValue, setFilter, parent, render },
 }: FilterProps<T>) {
   const [value, setValue] = React.useState(filterValue || '');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,13 +20,18 @@ export function ColumnHeaderFilter<T extends object>({
   return (
     <TextField
       name={id}
-      // label={render('Header')}
       value={value}
       autoFocus={index === 0 && firstIndex}
       variant={'standard'}
       onChange={handleChange}
       style={{
         width: '100%',
+      }}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position='start'>
+           <IconSearch fontSize={'small'} />
+          </InputAdornment>)
       }}
     />
   );

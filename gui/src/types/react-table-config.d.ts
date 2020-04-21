@@ -126,3 +126,11 @@ declare module 'react-table' {
 export type TableMouseEventHandler = (
   instance: TableInstance<T>
 ) => MouseEventHandler;
+
+export interface Table<T extends object = {}> extends TableOptions<T> {
+  name: string;
+  onAdd?: (instance: TableInstance<T>) => MouseEventHandler;
+  onDelete?: (instance: TableInstance<T>) => MouseEventHandler;
+  onEdit?: (instance: TableInstance<T>) => MouseEventHandler;
+  onClick?: (row: Row<T>) => void;
+}

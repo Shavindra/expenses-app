@@ -14,6 +14,7 @@ import {
 } from '../../../../ui';
 import { EditDetailsComponent } from '../edit-expenses/edit-expenses.component';
 import { useStyles } from './styles';
+import { CurrencyRangeFilter } from '../../../../ui/table/filters';
 
 class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
   public componentDidMount() {
@@ -36,6 +37,7 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
       </React.Fragment>
     );
   }
+  
 
   private dataColumns() {
     return [
@@ -45,6 +47,7 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
         filter: 'fuzzyText',
         disableResizing: true,
         disableGroupBy: true,
+        show: false
       },
       {
         Header: 'Merchant',
@@ -55,11 +58,16 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
       },
       {
         Header: 'Amount',
-        accessor: 'amount.asString',
-        filter: 'fuzzyText',
+        accessor: 'amount.value',
+        Filter: CurrencyRangeFilter,
+        filter: 'currencyRange',
         alignItems: 'center',
         disableResizing: true,
         disableGroupBy: true,
+        Cell: (props: any) => {
+          const { row } = props;
+          return <span>{row.original.amount.asString}</span>;
+        },
       },
       {
         id: 'expander',

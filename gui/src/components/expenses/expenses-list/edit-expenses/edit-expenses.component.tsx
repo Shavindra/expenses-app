@@ -24,7 +24,7 @@ export class EditDetails extends React.Component<any, any> {
         <Grid container spacing={8}>
           <Grid item xs={12} sm={6}>
             <UITextFieldEditable
-              value={this.props.fromMap.comment}
+              value={fromMap.comment}
               label={'Comments'}
               multiline={true}
               fullWidth={true}
@@ -40,7 +40,7 @@ export class EditDetails extends React.Component<any, any> {
             </div>
           </Grid>
           <Grid item xs={12} sm={12}>
-                <UIGridList data={this.props.fromMap.receipts} />
+            <UIGridList data={this.props.fromMap.receipts} />
           </Grid>
         </Grid>
       </React.Fragment>

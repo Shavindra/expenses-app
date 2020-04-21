@@ -1,144 +1,22 @@
-import { TableSortLabel } from '@material-ui/core';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
-import cx from 'clsx';
 import React, {
   CSSProperties,
-  MouseEventHandler,
   PropsWithChildren,
   ReactElement,
   useEffect,
-} from 'react';
+} from 'react';import { TableSortLabel } from '@material-ui/core';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
+import cx from 'clsx';
 import {
   Cell,
-  HeaderProps,
-  Hooks,
-  Meta,
-  Row,
-  TableInstance,
-  TableOptions,
-  useColumnOrder,
-  useExpanded,
-  useFilters,
-  useFlexLayout,
-  useGroupBy,
-  usePagination,
-  useResizeColumns,
-  useRowSelect,
-  useSortBy,
   useTable,
 } from 'react-table';
 
-import {
-  fuzzyTextFilter,
-  numericTextFilter,
-  ColumnHeaderFilter,
-} from './filters';
 import { TablePagination } from './TablePagination';
 import { useStyles } from './TableStyles';
 import { TableToolbar } from './TableToolbar';
-import { TooltipCell } from './TooltipCell';
-import { camelToWords, useLocalStorage, useDebounce } from '../../utils';
-
-export interface Table<T extends object = {}> extends TableOptions<T> {
-  name: string;
-  onAdd?: (instance: TableInstance<T>) => MouseEventHandler;
-  onDelete?: (instance: TableInstance<T>) => MouseEventHandler;
-  onEdit?: (instance: TableInstance<T>) => MouseEventHandler;
-  onClick?: (row: Row<T>) => void;
-}
-
-const DefaultHeader: React.FC<HeaderProps<any>> = ({ column }: any) => (
-  <>{column.id.startsWith('_') ? null : camelToWords(column.id)}</>
-);
-
-const getStyles = (props: any, align = 'left', alignItems = 'flex-start') => [
-  props,
-  {
-    style: {
-      justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
-      alignItems,
-      display: 'flex',
-    },
-  },
-];
-
-const selectionHook = (hooks: Hooks<any>) => {
-  hooks.allColumns.push((columns) => [
-    // Let's make a column for selection
-    //   {
-    //     id: '_selector',
-    //     disableResizing: true,
-    //     disableGroupBy: true,
-    //     minWidth: 45,
-    //     width: 45,
-    //     maxWidth: 45,
-    //     // The header can use the table's getToggleAllRowsSelectedProps method
-    //     // to render a checkbox
-    //     Header: ({ getToggleAllRowsSelectedProps }: HeaderProps<any>) => (
-    //       <HeaderCheckbox {...getToggleAllRowsSelectedProps()} />
-    //     ),
-    //     // The cell can use the individual row's getToggleRowSelectedProps method
-    //     // to the render a checkbox
-    //     Cell: ({ row }: CellProps<any>) => (
-    //       <RowCheckbox {...row.getToggleRowSelectedProps()} />
-    //     ),
-    //   },
-    ...columns,
-  ]);
-  hooks.useInstanceBeforeDimensions.push(({ headerGroups }) => {
-    // fix the parent group of the selection button to not be resizable
-    const selectionGroupHeader = headerGroups[0].headers[0];
-    selectionGroupHeader.canResize = false;
-  });
-};
-
-const headerProps = <T extends object>(
-  props: any,
-  { column }: Meta<T, { column: any }>
-) =>
-  getStyles(
-    props,
-    //  column && column.disableResizing,
-    column && column.align,
-    column && column.alignItems
-  );
-
-const cellProps = (props: any, { cell }: any) =>
-  getStyles(
-    props,
-    //  cell.column && cell.column.disableResizing,
-    cell.column && cell.column.align,
-    cell.column && cell.column.alignItems
-  );
-
-const defaultColumn = {
-  Filter: ColumnHeaderFilter,
-  Cell: TooltipCell,
-  Header: DefaultHeader,
-  // When using the useFlexLayout:
-  minWidth: 30, // minWidth is only used as a limit for resizing
-  width: 50, // width is used for both the flex-basis and flex-grow
-  maxWidth: 200, // maxWidth is only used as a limit for resizing
-};
-
-const hooks = [
-  useColumnOrder,
-  useFilters,
-  useGroupBy,
-  useSortBy,
-  useExpanded,
-  useFlexLayout,
-  usePagination,
-  useResizeColumns,
-  useRowSelect,
-  selectionHook,
-];
-
-const filterTypes = {
-  fuzzyText: fuzzyTextFilter,
-  numeric: numericTextFilter,
-};
+import { useLocalStorage, useDebounce } from '../../utils';
+import { filterTypes, defaultColumn, hooks, headerProps, cellProps } from './table-features';
 
 export function UITableComponent<T extends object>(
   props: PropsWithChildren<any>

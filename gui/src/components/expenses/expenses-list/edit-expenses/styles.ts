@@ -14,6 +14,5 @@ export const useStyles = (theme: any) => {
       display: 'flex',
       alignItems: 'center'
     },
- 
   });
 };
