@@ -7,7 +7,14 @@ import {
 
 export const listExpenses = () => {
   return async function (dispatch: any) {
-    const expenses = await expenseService.get();
+    // TODO: Sorting
+    // TODO: Progressively load increase 25 limit
+    // There is no sorting in the API atm.
+    // If I just load 25 they are only sorted by date only.
+    // which means if a user decide to use `sort` functionality
+    // it will not be correct.
+    // So for now I will load everything
+    const expenses = await expenseService.get({limit: 2000});
 
     dispatch(expensesListLoadSuccessAction(expenses));
   };
