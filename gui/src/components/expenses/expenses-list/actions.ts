@@ -14,7 +14,7 @@ export const listExpenses = () => {
     // which means if a user decide to use `sort` functionality
     // it will not be correct.
     // So for now I will load everything
-    const expenses = await expenseService.get({limit: 2000});
+    const expenses = await expenseService.get({ limit: 2000 });
 
     dispatch(expensesListLoadSuccessAction(expenses));
   };

@@ -29,13 +29,13 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
 
   // TODO create a HOC to handle Error/No Data
   public render() {
-    const {data, loading } = this.props.state.expenses;
+    const { data, loading } = this.props.state.expenses;
 
-    if(loading) {
-      return <div>Loading...</div>
+    if (loading) {
+      return <div>Loading...</div>;
     }
-    if(!data) {
-      return <div>No data yet...</div>
+    if (!data) {
+      return <div>No data yet...</div>;
     }
 
     return (

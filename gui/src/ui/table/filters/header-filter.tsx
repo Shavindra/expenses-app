@@ -33,7 +33,7 @@ export function ColumnHeaderFilter<T extends object>({
       onChange={handleChange}
       style={{
         width: '100%',
-        alignSelf: 'flex-end'
+        alignSelf: 'flex-end',
       }}
       InputProps={{
         startAdornment: (
