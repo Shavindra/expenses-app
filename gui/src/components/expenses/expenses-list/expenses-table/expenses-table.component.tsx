@@ -61,7 +61,6 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
         filter: 'fuzzyText',
         disableResizing: true,
         disableGroupBy: true,
-        show: false,
       },
       {
         Header: 'Merchant',
@@ -69,6 +68,17 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
         filter: 'fuzzyText',
         disableResizing: true,
         disableGroupBy: true,
+      },
+      {
+        Header: 'Date',
+        accessor: 'date',
+        disableResizing: true,
+        disableGroupBy: true,
+        disableFilters: true,
+        Cell: (props: any) => {
+          const { row } = props;
+          return <span>{row.original.displayDate}</span>;
+        },
       },
       {
         Header: 'Amount',

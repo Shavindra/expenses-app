@@ -34,7 +34,6 @@ export function numericTextFilter<T extends object>(
   id: IdType<T>,
   filterValue: FilterValue
 ) {
-  console.log('FILTER VALUE', filterValue);
   const comparator = parseValue(filterValue);
   return rows.filter((row) => comparator(row.values[id[0]]));
 }

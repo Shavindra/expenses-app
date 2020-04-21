@@ -7,6 +7,7 @@ import { AxiosResponse } from 'axios';
  * Internal Imports
  */
 import { formatNumber } from '../../../utils';
+import { expenseItemModel } from './item.model';
 
 export const updateExpenseModel = (response: AxiosResponse) => {
   const { data } = response;
@@ -16,18 +17,5 @@ export const updateExpenseModel = (response: AxiosResponse) => {
   // Facade layer/Model decoupling the FE from BE
   // If API changes then instead of multiple locations
   // only need to make the change in one place.
-  const { first, last } = data.user;
-  const user = { ...data.user, fullname: `${first} ${last}` };
-
-  const { value, currency } = data.amount;
-  const amount = {
-    ...data.amount,
-    asString: `${currency} ${formatNumber(value)}`,
-  };
-
-  return {
-    ...data,
-    user,
-    amount,
-  };
+  return expenseItemModel(data);
 };

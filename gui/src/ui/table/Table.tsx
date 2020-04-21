@@ -46,13 +46,23 @@ export function UITableComponent<T extends object>(
     `tableState:${name}`,
     {}
   );
+
+  const initialHiddenColumns = initialState.hiddenColumns.length
+    ? columns
+        .filter((col) => col.isVisible)
+        .map((col) => col.id || col.accessor)
+    : initialState.hiddenColumns;
+
   const instance = useTable<T>(
     {
       ...props,
       columns,
       filterTypes,
       defaultColumn,
-      initialState,
+      initialState: {
+        ...initialState,
+        hiddenColumns: initialHiddenColumns,
+      },
     },
     ...hooks
   );
@@ -75,6 +85,7 @@ export function UITableComponent<T extends object>(
       columnResizing,
       hiddenColumns,
     } = debouncedState;
+
     const val = {
       sortBy,
       filters,

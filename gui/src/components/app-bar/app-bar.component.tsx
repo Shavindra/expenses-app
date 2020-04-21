@@ -45,14 +45,6 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
           >
             <Menu />
           </IconButton>
-          <Typography
-            component="h1"
-            variant="h6"
-            noWrap={true}
-            className={classes.title}
-          >
-            Dashboard
-          </Typography>
         </Toolbar>
       </AppBar>
     );
