@@ -26,7 +26,7 @@ const getCurrencies = (preFilteredRows: any[]) => {
 
 // ones that have values between the two
 export const CurrencyRangeFilter: React.FC<any> = ({
-  column: { filterValue = [], render, preFilteredRows, setFilter, id },
+  column: { filterValue = [], preFilteredRows, setFilter, id },
 }: FilterProps<any>) => {
   const [min, max] = React.useMemo(() => getMinMax(preFilteredRows, id), [
     id,
@@ -82,7 +82,7 @@ export const CurrencyRangeFilter: React.FC<any> = ({
           label={`Min (${min})`}
           id={`${id}_1`}
           value={filterValue.min || ''}
-          type='number'
+          type="number"
           onChange={(e: any) => {
             const val = e.target.value;
             handleFilterChange({ min: val ? parseInt(e.target.value, 10) : 0 });
@@ -98,7 +98,7 @@ export const CurrencyRangeFilter: React.FC<any> = ({
           label={`Max (${max})`}
           id={`${id}_2`}
           value={filterValue.max || ''}
-          type='number'
+          type="number"
           InputLabelProps={{
             shrink: true,
           }}

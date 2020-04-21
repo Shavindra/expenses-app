@@ -17,7 +17,7 @@ import {
   numericTextFilter,
 } from './filters';
 import { TooltipCell } from './TooltipCell';
-import { multiCurrencyRangeFilter } from './filters/multi-currency';
+import { multiCurrencyRangeFilter } from './filters/multi-currency-filter';
 import { DefaultHeader } from './DefaultHeader';
 
 export const getStyles = (

@@ -13,14 +13,14 @@ export function App() {
   return (
     <Provider store={appStore}>
       <ThemeProvider theme={theme}>
-        <div className='App'>
-          <div className='page'>
+        <div className="App">
+          <div className="page">
             <BrowserRouter>
               <Switch>
-                <Route path='/expenses'>
+                <Route path="/expenses">
                   <ExpensesPage />
                 </Route>
-                <Route path='/'>
+                <Route path="/">
                   <HomePage />
                 </Route>
               </Switch>

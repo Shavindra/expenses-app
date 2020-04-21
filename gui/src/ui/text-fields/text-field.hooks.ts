@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 export const useDisableInput: any = (
-  initial: boolean = true,
+  initial: any = true,
   value: any,
   callback?: any
 ) => {

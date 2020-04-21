@@ -37,7 +37,6 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
       </React.Fragment>
     );
   }
-  
 
   private dataColumns() {
     return [
@@ -47,7 +46,7 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
         filter: 'fuzzyText',
         disableResizing: true,
         disableGroupBy: true,
-        show: false
+        show: false,
       },
       {
         Header: 'Merchant',

@@ -3,20 +3,24 @@ import React, {
   PropsWithChildren,
   ReactElement,
   useEffect,
-} from 'react';import { TableSortLabel } from '@material-ui/core';
+} from 'react';
+import { TableSortLabel } from '@material-ui/core';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 import cx from 'clsx';
-import {
-  Cell,
-  useTable,
-} from 'react-table';
+import { Cell, useTable } from 'react-table';
 
 import { TablePagination } from './TablePagination';
 import { useStyles } from './TableStyles';
 import { TableToolbar } from './TableToolbar';
 import { useLocalStorage, useDebounce } from '../../utils';
-import { filterTypes, defaultColumn, hooks, headerProps, cellProps } from './table-features';
+import {
+  filterTypes,
+  defaultColumn,
+  hooks,
+  headerProps,
+  cellProps,
+} from './table-features';
 
 export function UITableComponent<T extends object>(
   props: PropsWithChildren<any>

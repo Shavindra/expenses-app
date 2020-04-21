@@ -81,13 +81,25 @@ class DrawerCmp extends React.Component<DrawerProps, DrawerState> {
         </div>
         <Divider />
         <List>
-        <ListItem button component={NavLink} to="/" activeClassName="Mui-selected" exact>
+          <ListItem
+            button
+            component={NavLink}
+            to="/"
+            activeClassName="Mui-selected"
+            exact
+          >
             <ListItemIcon>
               <IconDashboard />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </ListItem>
-          <ListItem button component={NavLink} to="/expenses" activeClassName="Mui-selected" exact>
+          <ListItem
+            button
+            component={NavLink}
+            to="/expenses"
+            activeClassName="Mui-selected"
+            exact
+          >
             <ListItemIcon>
               <IconWallet />
             </ListItemIcon>

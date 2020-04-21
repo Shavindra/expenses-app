@@ -7,7 +7,7 @@ import {
   Edit,
   Add,
   AccountBalanceWallet,
-  Search
+  Search,
 } from '@material-ui/icons';
 
 export {
@@ -19,5 +19,5 @@ export {
   Save as IconSave,
   Edit as IconEdit,
   AccountBalanceWallet as IconWallet,
-  Search as IconSearch
+  Search as IconSearch,
 };

@@ -4,7 +4,7 @@ import { TextField, InputAdornment } from '@material-ui/core';
 import { IconSearch } from '../../icons';
 
 export function ColumnHeaderFilter<T extends object>({
-  column: { id, index, filterValue, setFilter, parent, render },
+  column: { id, index, filterValue, setFilter, parent },
 }: FilterProps<T>) {
   const [value, setValue] = React.useState(filterValue || '');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,9 +29,10 @@ export function ColumnHeaderFilter<T extends object>({
       }}
       InputProps={{
         startAdornment: (
-          <InputAdornment position='start'>
-           <IconSearch fontSize={'small'} />
-          </InputAdornment>)
+          <InputAdornment position="start">
+            <IconSearch fontSize={'small'} />
+          </InputAdornment>
+        ),
       }}
     />
   );

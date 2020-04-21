@@ -1,4 +1,4 @@
-import React, { useCallback, ChangeEvent, ReactElement } from 'react';
+import React, { useCallback, ChangeEvent } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiButton-label': {
       fontSize: '11px',
-      textTransform: 'none'
-    }
+      textTransform: 'none',
+    },
   },
   input: {
     display: 'none',
@@ -36,7 +36,7 @@ export const UIFileUpload: React.FC<FileUpload> = (props: FileUpload) => {
         onChange(event.target.files);
       }
     },
-    []
+    [onChange]
   );
 
   const Icon = icon ? icon : PhotoCamera;
@@ -44,14 +44,14 @@ export const UIFileUpload: React.FC<FileUpload> = (props: FileUpload) => {
   return (
     <div className={classes.root}>
       <input
-        accept='image/*'
+        accept="image/*"
         multiple={multiple}
         className={classes.input}
-        id='icon-button-file'
-        type='file'
+        id="icon-button-file"
+        type="file"
         name={'receipt'}
       />
-       <input
+      <input
         accept="image/*"
         className={classes.input}
         id="contained-button-file"
@@ -60,7 +60,7 @@ export const UIFileUpload: React.FC<FileUpload> = (props: FileUpload) => {
         onChange={handOnChange}
       />
       <label htmlFor="contained-button-file">
-      <Button color="secondary" component="span" endIcon={<Icon />}>
+        <Button color="secondary" component="span" endIcon={<Icon />}>
           Upload
         </Button>
       </label>

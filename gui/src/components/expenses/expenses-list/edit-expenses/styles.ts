@@ -8,11 +8,11 @@ export const useStyles = (theme: any) => {
     receiptHeader: {
       display: 'flex',
       alignItems: 'center',
-      padding: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px `
+      padding: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px `,
     },
     uploadButton: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
   });
 };

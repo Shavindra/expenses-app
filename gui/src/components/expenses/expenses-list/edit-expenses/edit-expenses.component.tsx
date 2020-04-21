@@ -18,7 +18,7 @@ export class EditDetails extends React.Component<any, any> {
     const { classes, fromMap } = this.props;
     return (
       <React.Fragment>
-        <Typography variant='h6' className={classes.title}>
+        <Typography variant="h6" className={classes.title}>
           Edit Details
         </Typography>
         <Grid container spacing={8}>
@@ -35,7 +35,7 @@ export class EditDetails extends React.Component<any, any> {
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
             <div className={classes.receiptHeader}>
-              <Typography variant='h6'>Receipts</Typography>
+              <Typography variant="h6">Receipts</Typography>
               <UIFileUpload onChange={this.handleFileUpload} icon={AddIcon} />
             </div>
           </Grid>
