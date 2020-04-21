@@ -65,15 +65,17 @@ router.post('/:id/receipts', (req, res) => {
   const expense = expenses.find((expense) => expense.id === id)
 
   if (expense) {
-    const receipt = req.files.receipt as UploadedFile
-    const receiptId = `${id}-${expense.receipts.length}`
-    receipt.mv(`${process.cwd()}/receipts/${receiptId}`, (err) => {
+    const receipt = req.files.receipt as UploadedFile;
+    const extension = receipt.mimetype.split('/')[1];
+    const fileName = `${id}-${expense.receipts.length}.${extension}`;
+
+    receipt.mv(`${process.cwd()}/receipts/${fileName}`, (err) => {
       if (err) {
         return res.status(500).send(err);
       }
    
       expense.receipts.push({
-        url: `/receipts/${receiptId}`
+        url: `/receipts/${fileName}`
       })
       res.status(200).send(expense)
     })

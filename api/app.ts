@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
   next()
 })
 
-app.use(logger('dev'))
+//app.use(logger('dev'))
 app.use(fileUpload({
   limit: { fileSize: Infinity },
 }));
