@@ -8,7 +8,7 @@ See the [API details](https://github.com/pleo-io/frontend-challenge/blob/master/
 - [x] User can list expenses.
 - [x] User can add a comment on an expense.
 - [x] User can filter on expenses (client side filters).
-- [x] User can hide/show specific columns
+- [x] User can hide/show specific columns.
 - [x] User can add a receipt image on an expenses.
 - [x] Responsive design.
 
@@ -17,7 +17,7 @@ See the [API details](https://github.com/pleo-io/frontend-challenge/blob/master/
 
 - [ ] `d` Implement Cypress and E2E testing.
 - [ ] `d` App loading states handle.
-- [ ] `d` Component state handle
+- [ ] `d` Component state handle.
 - [ ] `u` Multi edit for expenses.
 - [ ] `u` Multi currency select filter.
 - [ ] `u` Progressively load expenses.
@@ -51,25 +51,26 @@ Loosely based on *ducks pattern* this includes specific actions/reducers for dif
 Redux store configuration and includes `RootAction`, `RootReducer` etc.. 
 
 ### `/utils`
-General utility functions to be used
+General utility functions to be used.
 
 ### `/types`
 Type definition files that might be relevant to, need to be used in different parts of application. 
 
 ## UX
 ### Colour palette: 
-chosen to be calming neutral minimal look. User would be looking at financial information therefore it should avoid clutter and convey the information without distractions and user should be able to analyse the information objectively. 
+Chosen to be calming neutral minimal look. User would be looking at financial information therefore it should avoid clutter, convey the information without distractions, user should be able to analyse the information objectively. 
 
 ### Features: Expense table
-Expense table display `full name`, `merchant` and `amount`
-- User can filter each column based on type of data (e.g. text, specific currency with range)
-- Since there are expenses from different currencies just displaying information makes it impossible to accurately sort/filter expenditure. Currency filter allow user to see expenditures for a specific currency between a range of values. However, at this moment it doesn't include selecting multiple currencies same time.
-- Show/hide more information specific columns so user would only see specific information they would need. Helps smaller screens
-- Edit expense within same page. This was done to avoid user navigating to a different page and having to come back to page to edit another expense. This also allows the possibility to multi edit e.g.
-- Inline edit of comment.
-- Upload receipts button concise and simple.
-- Tooltips to show actions e.g. more info on `^` hover
-- User can select number of rows to display with pagination to avoid having to see too much/too little information with pagination
+Expense table display `full name`, `merchant` and `amount`.
+- User can filter each column based on type of data (e.g. text, specific currency with range).
+- User can filter `amount` by specific currency and range of numerical values. Since there are expenses from different currencies just displaying information makes it impossible to accurately sort/filter.expenditure. Currency filter allow user to see expenditures for a specific currency between a range of values. However, at this moment it doesn't include selecting multiple currencies same time.
+- User can show/hide more information specific columns. So user would only see specific information they would need. Helps smaller screens.
+- User can sort data `ascending` or `descending` order.
+- User can edit expense within same page. This was done to avoid user navigating to a different page and having to come back to page to editanother expense. This also allows the possibility to multi edit.
+- User can inline edit a comment.
+- User can upload receipts using concise and simple button.
+- User can see tooltips with specifc information e.g. more info on `^` hover.
+- User can select number of rows to display with pagination to avoid having to see too much/too little information with pagination.
 
 ## Development
 
@@ -79,16 +80,16 @@ Expense table display `full name`, `merchant` and `amount`
 - [x] Typescript 3.8+
 - [x] Storybook
 - [x] Jest
-- [x] Cypress
+- [ ] Cypress
 
 ### Installation `npm install` 
 Runs the installation of the package. Support node 10+
 
 ### Start `npm start`
-Currently app would only run in `development` mode on `port=3090`
+Currently app would only run in `development` mode on `port=3090`.
 
 ### Development start - `npm run start:dev`
-Run application in `development` mode on `port=3090`
+Run application in `development` mode on `port=3090`.
 
 ### Development code linting `npm run lint`
 App enforces `eslint` with `prettier` with `plugin:react/recommended` for strict lint/coding.
@@ -103,7 +104,7 @@ No E2E jest specific tests implemented yet.
 ### Contributing guidelines
 
 #### Development practices
-Google guidelines: https://google.github.io/eng-practices/
+Google guidelines: https://google.github.io/eng-practices/.
 
 #### Commits
 ```quote
@@ -117,7 +118,7 @@ archive, summarize the relevant points of the discussion.
 
 Also ensure the period `.` at the end of the commit message.
 
-Git commit guidelines: https://git.kernel.org/pub/scm/git/git.git/tree/Documentation/SubmittingPatches
+Git commit guidelines: https://git.kernel.org/pub/scm/git/git.git/tree/Documentation/SubmittingPatches.
 
 
 ## Build
