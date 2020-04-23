@@ -1,6 +1,13 @@
+/**
+ * External Imports
+ */
 import React from 'react';
-import { AppBarComponent } from '../app-bar.component';
 import { action } from '@storybook/addon-actions';
+
+/**
+ * Internal Imports
+ */
+import { AppBarComponent } from '../app-bar.component';
 
 export default {
   title: 'App Bar',

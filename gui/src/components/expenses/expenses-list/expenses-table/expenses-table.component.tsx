@@ -4,7 +4,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 
 /**
  * Internal Imports
@@ -34,13 +34,13 @@ class ExpensesListCmp extends React.Component<AppBarProps, AppBarState> {
     if (loading) {
       return <div>Loading...</div>;
     }
-    if (!data) {
+
+    if (!data.length) {
       return <div>No data yet...</div>;
     }
 
     return (
       <React.Fragment>
-        <div>Expenses list</div>
         <UITableComponent
           name={'expenses-list'}
           columns={this.dataColumns()}
@@ -151,7 +151,7 @@ function mapDispatchToProps(dispatch: any): { actions: any } {
   };
 }
 
-export const ExpensesListComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withStyles(useStyles)(ExpensesListCmp));
+export const ExpensesListComponent = compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withStyles(useStyles)
+)(ExpensesListCmp) as React.ComponentType<any>;

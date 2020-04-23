@@ -150,6 +150,8 @@ const ExpensesInitialState = {
   data: [],
   dataMap: {},
   selectedExpense: null,
+  loading: true,
+  error: null
 };
 
 export const expensesListReducer = createReducer(

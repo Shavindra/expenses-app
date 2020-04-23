@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 
 /**
  * Internal Imports
@@ -20,12 +20,11 @@ import { bindActionCreators } from 'redux';
 import { appLoadSuccessAction } from '../../state-managers';
 import { AppBarProps, AppBarState } from './types';
 import { useStyles } from './styles';
-import { RootState } from '../../store/types';
+import { withRouterConfig } from '../higher-order/withRouteConfig';
 
 class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
   public render() {
-    const { openMenu, classes } = this.props;
-
+    const { openMenu, classes, routerConfig } = this.props;
     return (
       <AppBar
         position="absolute"
@@ -45,6 +44,9 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
           >
             <Menu />
           </IconButton>
+          <Typography variant="h6" color="inherit">
+            {routerConfig.title}
+          </Typography>
         </Toolbar>
       </AppBar>
     );
@@ -56,24 +58,16 @@ class AppBarCmp extends React.Component<AppBarProps, AppBarState> {
   };
 }
 
-// Map States to Props
-function mapStateToProps(state: RootState): { state: RootState } {
-  const { app } = state;
-
-  return {
-    state: {
-      app,
-    },
-  };
-}
-
 function mapDispatchToProps(dispatch: any) {
   return {
     actions: bindActionCreators({ appLoadSuccessAction }, dispatch),
   };
 }
 
-export const AppBarComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withStyles(useStyles)(AppBarCmp));
+const enhance = compose(
+  connect(null, mapDispatchToProps),
+  withStyles(useStyles),
+  withRouterConfig
+);
+
+export const AppBarComponent = enhance(AppBarCmp) as React.ComponentType<any>;

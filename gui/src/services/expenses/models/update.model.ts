@@ -6,7 +6,6 @@ import { AxiosResponse } from 'axios';
 /**
  * Internal Imports
  */
-import { formatNumber } from '../../../utils';
 import { expenseItemModel } from './item.model';
 
 export const updateExpenseModel = (response: AxiosResponse) => {

@@ -4,7 +4,7 @@
 import React from 'react';
 import { Grid, Typography, withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '@reduxjs/toolkit';
+import { bindActionCreators, compose } from '@reduxjs/toolkit';
 
 /**
  * Internal Imports
@@ -79,7 +79,7 @@ function mapDispatchToProps(dispatch: any): { actions: any } {
     actions: bindActionCreators({ updateExpense, uploadReceipt }, dispatch),
   };
 }
-export const EditDetailsComponent = connect(
+export const EditDetailsComponent = compose(connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(useStyles)(EditDetails));
+), withStyles(useStyles))(EditDetails);
